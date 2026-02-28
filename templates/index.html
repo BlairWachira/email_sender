@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Sender</title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <div class="card">
+      <h2>Email Sender</h2>
+
+      <form id="emailForm">
+
+        <label>Sender Email</label>
+        <input type="text" placeholder="sender email" name="sender_email" id="sender_email" required>
+
+        <label>Sender App Password</label>
+        <input type="password" placeholder="app password" id="app_password" name="app_password" required>
+
+        <div class="help-link">
+          <a href="/get_password">
+            <button type="button" class="help-btn">How to get App Password?</button>
+          </a>
+        </div>
+
+        <label>Recipients (comma separated)</label>
+        <input type="text" placeholder="recipients" name="recipients" id="recipients" required>
+
+        <label>Subject</label>
+        <input type="text" placeholder="subject" name="subject" id="subject" required>
+
+        <label>Email Message</label>
+        <textarea name="message" id="message" required></textarea>
+
+        <button type="submit" class="send-btn">Send Emails</button>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+</html>
